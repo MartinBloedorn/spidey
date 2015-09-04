@@ -1,0 +1,146 @@
+2015-09-04 15:09:47 [scrapy] INFO: Scrapy 1.0.3 started (bot: spidey_crawler)
+2015-09-04 15:09:47 [scrapy] INFO: Optional features available: ssl, http11
+2015-09-04 15:09:47 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'spidey_crawler.spiders', 'SPIDER_MODULES': ['spidey_crawler.spiders'], 'BOT_NAME': 'spidey_crawler'}
+2015-09-04 15:09:47 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2015-09-04 15:09:47 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-09-04 15:09:47 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-09-04 18:09:48 [scrapy] INFO: Enabled item pipelines: GizmodoStoringPipeline
+2015-09-04 18:09:48 [scrapy] INFO: Spider opened
+2015-09-04 18:09:48 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-09-04 18:09:48 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2015-09-04 18:09:49 [scrapy] DEBUG: Redirecting (301) to <GET http://gizmodo.com/> from <GET http://us.gizmodo.com/>
+2015-09-04 18:09:50 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/> (referer: None)
+2015-09-04 18:09:50 [gizmodo] INFO: A response from http://gizmodo.com/ just arrived!
+2015-09-04 18:09:50 [scrapy] DEBUG: Filtered duplicate request: <GET http://gizmodo.com/glowing-antineutrino-map-shows-how-radioactive-the-eart-1728765824#replies> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/new-pavement-made-from-tires-will-save-old-faithfuls-gr-1728708161> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/deadspin-nuggets-mascot-excels-at-taunting-children-g-1728731889> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/the-best-star-wars-loot-from-force-friday-1728756436> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://toyland.gizmodo.com/these-star-wars-drone-builders-need-to-start-selling-us-1702789427> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://sploid.gizmodo.com/> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/new-pavement-made-from-tires-will-save-old-faithfuls-gr-1728708161 just arrived!
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.001) QUERY = u'INSERT INTO "spidey_rest_gizmodoentry" ("created", "title", "author", "text", "post_id") VALUES (%s, %s, %s, %s, %s)' - PARAMS = (u'2015-09-04 18:09:51.260727', u"New Pavement Made From Tires Will Save Old Faithful's Groundwater", u'Bryan Lufkin', u'', u'1441372800672'); args=[u'2015-09-04 18:09:51.260727', u"New Pavement Made From Tires Will Save Old Faithful's Groundwater", u'Bryan Lufkin', u'', u'1441372800672']
+2015-09-04 18:09:51 [scrapy] DEBUG: Scraped from <200 http://gizmodo.com/new-pavement-made-from-tires-will-save-old-faithfuls-gr-1728708161>
+{'author': u'Bryan Lufkin',
+ 'post_id': u'1441372800672',
+ 'title': u"New Pavement Made From Tires Will Save Old Faithful's Groundwater"}
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://fieldguide.gizmodo.com/how-to-make-your-ipad-kid-friendly-1728702174> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://toyland.gizmodo.com/you-can-finally-pilot-your-own-flying-millennium-falcon-1728557622> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/this-futuristic-see-through-fridge-is-finally-going-to-1728744596> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/review-the-steve-jobs-documentary-apple-doesnt-want-yo-1727741715> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/nyc-teacher-who-crashed-a-drone-at-the-us-open-last-nig-1728716240> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://sploid.gizmodo.com/inside-the-last-factory-that-still-makes-audio-cassette-1728708774> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://toyland.gizmodo.com/sphero-bb-8-review-this-is-the-coolest-star-wars-toy-e-1727067215> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/nuclear-reactor-basically-look-like-a-sci-fi-weapon-in-1728711929> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/deadspin-nuggets-mascot-excels-at-taunting-children-g-1728731889 just arrived!
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'INSERT INTO "spidey_rest_gizmodoentry" ("created", "title", "author", "text", "post_id") VALUES (%s, %s, %s, %s, %s)' - PARAMS = (u'2015-09-04 18:09:51.321739', u'Deadspin Nuggets Mascot Excels At Taunting Children | Gawker Four Charged With Pulling McDonald\u2019s Wo', u'Jane-Claire Quigley', u'', u'1441377945790'); args=[u'2015-09-04 18:09:51.321739', u'Deadspin Nuggets Mascot Excels At Taunting Children | Gawker Four Charged With Pulling McDonald\u2019s Wo', u'Jane-Claire Quigley', u'', u'1441377945790']
+2015-09-04 18:09:51 [scrapy] DEBUG: Scraped from <200 http://gizmodo.com/deadspin-nuggets-mascot-excels-at-taunting-children-g-1728731889>
+{'author': u'Jane-Claire Quigley',
+ 'post_id': u'1441377945790',
+ 'title': u'Deadspin Nuggets Mascot Excels At Taunting Children | Gawker Four Charged With Pulling McDonald\u2019s Wo'}
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/the-best-star-wars-loot-from-force-friday-1728756436 just arrived!
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'INSERT INTO "spidey_rest_gizmodoentry" ("created", "title", "author", "text", "post_id") VALUES (%s, %s, %s, %s, %s)' - PARAMS = (u'2015-09-04 18:09:51.332073', u'The Best Star Wars Loot From Force Friday', u'Mario Aguilar', u'', u'1441383885256'); args=[u'2015-09-04 18:09:51.332073', u'The Best Star Wars Loot From Force Friday', u'Mario Aguilar', u'', u'1441383885256']
+2015-09-04 18:09:51 [scrapy] DEBUG: Scraped from <200 http://gizmodo.com/the-best-star-wars-loot-from-force-friday-1728756436>
+{'author': u'Mario Aguilar',
+ 'post_id': u'1441383885256',
+ 'title': u'The Best Star Wars Loot From Force Friday'}
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/two-teens-arrested-for-sexting-each-other-1728742508> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://toyland.gizmodo.com/these-star-wars-drone-builders-need-to-start-selling-us-1702789427 just arrived!
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'INSERT INTO "spidey_rest_gizmodoentry" ("created", "title", "author", "text", "post_id") VALUES (%s, %s, %s, %s, %s)' - PARAMS = (u'2015-09-04 18:09:51.367120', u'These Star Wars Drone Builders Need To Start Selling Their Creations', u'Andrew Liszewski', u'', u'1431004800711'); args=[u'2015-09-04 18:09:51.367120', u'These Star Wars Drone Builders Need To Start Selling Their Creations', u'Andrew Liszewski', u'', u'1431004800711']
+2015-09-04 18:09:51 [scrapy] DEBUG: Scraped from <200 http://toyland.gizmodo.com/these-star-wars-drone-builders-need-to-start-selling-us-1702789427>
+{'author': u'Andrew Liszewski',
+ 'post_id': u'1431004800711',
+ 'title': u'These Star Wars Drone Builders Need To Start Selling Their Creations'}
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://sploid.gizmodo.com/ just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://fieldguide.gizmodo.com/how-to-make-your-ipad-kid-friendly-1728702174 just arrived!
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'INSERT INTO "spidey_rest_gizmodoentry" ("created", "title", "author", "text", "post_id") VALUES (%s, %s, %s, %s, %s)' - PARAMS = (u'2015-09-04 18:09:51.429873', u'How to Make Your iPad Kid-Friendly', u'David Nield', u'', u'1441373700363'); args=[u'2015-09-04 18:09:51.429873', u'How to Make Your iPad Kid-Friendly', u'David Nield', u'', u'1441373700363']
+2015-09-04 18:09:51 [scrapy] DEBUG: Scraped from <200 http://fieldguide.gizmodo.com/how-to-make-your-ipad-kid-friendly-1728702174>
+{'author': u'David Nield',
+ 'post_id': u'1441373700363',
+ 'title': u'How to Make Your iPad Kid-Friendly'}
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://toyland.gizmodo.com/you-can-finally-pilot-your-own-flying-millennium-falcon-1728557622 just arrived!
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'INSERT INTO "spidey_rest_gizmodoentry" ("created", "title", "author", "text", "post_id") VALUES (%s, %s, %s, %s, %s)' - PARAMS = (u'2015-09-04 18:09:51.440248', u'You Can Finally Pilot Your Own Flying Millennium Falcon and X-Wing', u'Andrew Liszewski', u'', u'1441339260415'); args=[u'2015-09-04 18:09:51.440248', u'You Can Finally Pilot Your Own Flying Millennium Falcon and X-Wing', u'Andrew Liszewski', u'', u'1441339260415']
+2015-09-04 18:09:51 [scrapy] DEBUG: Scraped from <200 http://toyland.gizmodo.com/you-can-finally-pilot-your-own-flying-millennium-falcon-1728557622>
+{'author': u'Andrew Liszewski',
+ 'post_id': u'1441339260415',
+ 'title': u'You Can Finally Pilot Your Own Flying Millennium Falcon and X-Wing'}
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/this-futuristic-see-through-fridge-is-finally-going-to-1728744596 just arrived!
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'BEGIN' - PARAMS = (); args=None
+2015-09-04 18:09:51 [django.db.backends] DEBUG: (0.000) QUERY = u'INSERT INTO "spidey_rest_gizmodoentry" ("created", "title", "author", "text", "post_id") VALUES (%s, %s, %s, %s, %s)' - PARAMS = (u'2015-09-04 18:09:51.452630', u'This Futuristic See-Through Fridge Is Finally Going to Be a Real Thing', u'Adam Clark Estes', u'', u'1441385100025'); args=[u'2015-09-04 18:09:51.452630', u'This Futuristic See-Through Fridge Is Finally Going to Be a Real Thing', u'Adam Clark Estes', u'', u'1441385100025']
+2015-09-04 18:09:51 [scrapy] DEBUG: Scraped from <200 http://gizmodo.com/this-futuristic-see-through-fridge-is-finally-going-to-1728744596>
+{'author': u'Adam Clark Estes',
+ 'post_id': u'1441385100025',
+ 'title': u'This Futuristic See-Through Fridge Is Finally Going to Be a Real Thing'}
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/review-the-steve-jobs-documentary-apple-doesnt-want-yo-1727741715 just arrived!
+2015-09-04 18:09:51 [scrapy] INFO: Closing spider (Reached maximum of URL crawls!)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/nyc-teacher-who-crashed-a-drone-at-the-us-open-last-nig-1728716240 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://sploid.gizmodo.com/inside-the-last-factory-that-still-makes-audio-cassette-1728708774 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://toyland.gizmodo.com/sphero-bb-8-review-this-is-the-coolest-star-wars-toy-e-1727067215 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/nuclear-reactor-basically-look-like-a-sci-fi-weapon-in-1728711929 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/two-teens-arrested-for-sexting-each-other-1728742508 just arrived!
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/glowing-antineutrino-map-shows-how-radioactive-the-eart-1728765824> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/google-now-tells-you-about-all-the-possible-illnesses-y-1728679195> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://toyland.gizmodo.com/kylo-rens-hot-wheels-car-is-cooler-than-his-spaceship-1728514399> (referer: http://gizmodo.com/the-best-star-wars-loot-from-force-friday-1728756436)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://toyland.gizmodo.com/hasbros-remote-control-bb-8-doesnt-need-a-smartphone-or-1728106851> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/glowing-antineutrino-map-shows-how-radioactive-the-eart-1728765824 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/google-now-tells-you-about-all-the-possible-illnesses-y-1728679195 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://toyland.gizmodo.com/kylo-rens-hot-wheels-car-is-cooler-than-his-spaceship-1728514399 just arrived!
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/new-star-wars-crap-that-makes-me-want-to-cut-my-hand-of-1728604644> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/in-case-you-want-to-prowl-around-japan-from-the-point-o-1728473268> (referer: http://gizmodo.com/new-pavement-made-from-tires-will-save-old-faithfuls-gr-1728708161)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/an-autonomous-submarine-will-hunt-starfish-on-the-great-1728684764> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://sploid.gizmodo.com/photos-of-chinas-parade-commemorating-wwii-shows-off-it-1728512590> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://toyland.gizmodo.com/crap-it-turns-out-that-pottery-barn-millennium-falcon-1728709887> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://toyland.gizmodo.com/hasbros-remote-control-bb-8-doesnt-need-a-smartphone-or-1728106851 just arrived!
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/gizmodo-and-io9-were-on-mr-robot-i-was-delighted-con-1728542894> (referer: http://gizmodo.com/new-pavement-made-from-tires-will-save-old-faithfuls-gr-1728708161)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://sploid.gizmodo.com/video-the-scientific-art-of-sound-when-making-a-guitar-1728405896> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://gizmodo.com/ricohs-theta-s-360-degree-camera-lets-you-publish-photo-1728452070> (referer: http://gizmodo.com/the-best-star-wars-loot-from-force-friday-1728756436)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/new-star-wars-crap-that-makes-me-want-to-cut-my-hand-of-1728604644 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/in-case-you-want-to-prowl-around-japan-from-the-point-o-1728473268 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/an-autonomous-submarine-will-hunt-starfish-on-the-great-1728684764 just arrived!
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://toyland.gizmodo.com/heres-all-the-new-star-wars-figures-youll-be-fighting-l-1728069293> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://sploid.gizmodo.com/photos-of-chinas-parade-commemorating-wwii-shows-off-it-1728512590 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://toyland.gizmodo.com/crap-it-turns-out-that-pottery-barn-millennium-falcon-1728709887 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/gizmodo-and-io9-were-on-mr-robot-i-was-delighted-con-1728542894 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://sploid.gizmodo.com/video-the-scientific-art-of-sound-when-making-a-guitar-1728405896 just arrived!
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://gizmodo.com/ricohs-theta-s-360-degree-camera-lets-you-publish-photo-1728452070 just arrived!
+2015-09-04 18:09:51 [scrapy] DEBUG: Crawled (200) <GET http://sploid.gizmodo.com/how-an-indoor-arena-makes-an-ice-hockey-rink-1728412342> (referer: http://gizmodo.com/)
+2015-09-04 18:09:51 [gizmodo] INFO: A response from http://toyland.gizmodo.com/heres-all-the-new-star-wars-figures-youll-be-fighting-l-1728069293 just arrived!
+2015-09-04 18:09:52 [scrapy] DEBUG: Crawled (200) <GET http://reviews.gizmodo.com/google-onhub-review-your-router-sucks-but-do-you-trus-1727898764> (referer: http://gizmodo.com/the-best-star-wars-loot-from-force-friday-1728756436)
+2015-09-04 18:09:52 [gizmodo] INFO: A response from http://sploid.gizmodo.com/how-an-indoor-arena-makes-an-ice-hockey-rink-1728412342 just arrived!
+2015-09-04 18:09:52 [gizmodo] INFO: A response from http://reviews.gizmodo.com/google-onhub-review-your-router-sucks-but-do-you-trus-1727898764 just arrived!
+2015-09-04 18:09:52 [scrapy] DEBUG: Crawled (200) <GET http://lego.gizmodo.com/lego-officially-reveals-its-star-wars-the-force-awaken-1728453076> (referer: http://gizmodo.com/the-best-star-wars-loot-from-force-friday-1728756436)
+2015-09-04 18:09:52 [gizmodo] INFO: A response from http://lego.gizmodo.com/lego-officially-reveals-its-star-wars-the-force-awaken-1728453076 just arrived!
+2015-09-04 18:09:52 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 11101,
+ 'downloader/request_count': 32,
+ 'downloader/request_method_count/GET': 32,
+ 'downloader/response_bytes': 819840,
+ 'downloader/response_count': 32,
+ 'downloader/response_status_count/200': 31,
+ 'downloader/response_status_count/301': 1,
+ 'dupefilter/filtered': 192,
+ 'finish_reason': 'Reached maximum of URL crawls!',
+ 'finish_time': datetime.datetime(2015, 9, 4, 18, 9, 52, 273307),
+ 'item_scraped_count': 7,
+ 'log_count/DEBUG': 55,
+ 'log_count/INFO': 38,
+ 'request_depth_max': 2,
+ 'response_received_count': 31,
+ 'scheduler/dequeued': 32,
+ 'scheduler/dequeued/memory': 32,
+ 'scheduler/enqueued': 71,
+ 'scheduler/enqueued/memory': 71,
+ 'start_time': datetime.datetime(2015, 9, 4, 18, 9, 48, 547430)}
+2015-09-04 18:09:52 [scrapy] INFO: Spider closed (Reached maximum of URL crawls!)
+Save error: UNIQUE constraint failed: spidey_rest_gizmodoentry.post_id
+Save error: UNIQUE constraint failed: spidey_rest_gizmodoentry.post_id
+Save error: UNIQUE constraint failed: spidey_rest_gizmodoentry.post_id
+Save error: UNIQUE constraint failed: spidey_rest_gizmodoentry.post_id
+Save error: UNIQUE constraint failed: spidey_rest_gizmodoentry.post_id
+Save error: UNIQUE constraint failed: spidey_rest_gizmodoentry.post_id
+Save error: UNIQUE constraint failed: spidey_rest_gizmodoentry.post_id

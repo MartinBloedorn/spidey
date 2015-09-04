@@ -9,6 +9,7 @@ from spidey_crawler.items import GizmodoEntryItem
 import sys, os
 
 # Configures Django models to be acessible from outside the app folder
+# http://blog.gabrielsaldana.org/using-django-models-in-external-python-scripts/ **such swag**
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "spidey_django.settings")
 
