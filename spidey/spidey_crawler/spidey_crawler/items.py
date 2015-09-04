@@ -8,7 +8,8 @@
 import scrapy
 
 
-class SpideyCrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class GizmodoEntryItem(scrapy.Item):
+    author = scrapy.Field()
+    title = scrapy.Field()
+    post_id = scrapy.Field()
+    text = scrapy.Field()
