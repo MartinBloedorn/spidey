@@ -18,6 +18,11 @@ Note that *scrapy* depends on [*lxml*](http://lxml.de/). **pip** will run the re
 After installing the deps, get this repo with:
 
     git clone https://github.com/MartinBloedorn/spidey.git
+
+To ensure that the directory is writable (specially the **sqlite** database), execute:
+
+    sudo chown -R $USER:$USER spidey/
+    sudo chmod -R 755 spidey/
     
 To get it up and running (with **sqlite**), execute: 
 
@@ -46,6 +51,21 @@ Make sure the following modules are loaded into **Apache** (using `a2enmod`):
     mod_ssl
     
 Restart **Apache** (in Debian-based systems: `sudo service apache2 restart`). Good to go! 
+
+# Configuring *crontab*
+To have the crawler run every second hour, one simple solution is to add it as a **cron** job. 
+
+In the **spidey** repo, `launch_crawler.sh` calls the crawler. Mark it as executable with `chmod a+x launch_crawler.sh`. Add it as a **cron** job. Run:
+
+    crontab -e
+
+In the editor, add the following line:
+
+    * */2 * * * /path/to/spidey/launch_crawler.sh
+    
+The `* */2 * * *` part sets the script to be executed every two hours. 
+
+    
 
 # Structure of this tool
 
