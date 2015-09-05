@@ -1,6 +1,9 @@
 # Annoying OSX thingies
 *.DS_Store
 
+# Avoid sending the database back and forth:
+./spidey/db.sqlite3
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
