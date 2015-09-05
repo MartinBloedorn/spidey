@@ -37,6 +37,8 @@ class GizmodoSpider(scrapy.Spider):
             # Uses the JavaScript date (milliseconds since the epoch) as post_id
             item['post_id'] = response.xpath('//script/text()').re(self.re_id)[0]
             item['post_date'] = response.xpath('//script/text()').re(self.re_date)[0]
+            # Join all elements of the query in a single block of text, breaking lines at each paragraph
+            item['text'] = '\n'.join(response.xpath('//p[@data-textannotation-id]').extract())
             item['url'] = response.url
             yield item
 
