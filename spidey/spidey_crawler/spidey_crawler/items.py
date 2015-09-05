@@ -12,4 +12,8 @@ class GizmodoEntryItem(scrapy.Item):
     author = scrapy.Field()
     title = scrapy.Field()
     post_id = scrapy.Field()
+    post_date = scrapy.Field()
+    description = scrapy.Field()
+    keywords = scrapy.Field()
     text = scrapy.Field()
+    url = scrapy.Field()

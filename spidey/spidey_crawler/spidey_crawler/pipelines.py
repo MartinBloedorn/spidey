@@ -34,6 +34,10 @@ class GizmodoStoringPipeline(object):
             g_item.author = item['author']
             g_item.post_id = item['post_id']
             g_item.title = item['title']
+            g_item.description = item['description']
+            g_item.keywords = item['keywords']
+            g_item.post_date = item['post_date']
+            g_item.url = item['url']
             g_item.save()
 
             return item

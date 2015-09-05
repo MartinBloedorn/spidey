@@ -4,4 +4,14 @@ from spidey_rest.models import GizmodoEntry
 class GizmodoEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = GizmodoEntry
-        fields = ('id', 'title', 'author', 'post_id', 'created', 'text')
+        fields = ('id',
+                  'created',
+                  'title',
+                  'author',
+                  'url',
+                  'post_id',
+                  'post_date',
+                  'keywords',
+                  'description',
+                  'text'
+                  )

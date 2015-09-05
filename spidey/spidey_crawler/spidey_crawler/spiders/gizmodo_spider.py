@@ -12,8 +12,9 @@ class GizmodoSpider(scrapy.Spider):
     max_expansions = 10
 
     # Regex for date field and valid URL (to crawl)
-    re_date = 'date:\s*new\s*Date\(\'(\w+)\'\)'
+    re_id = 'date:\s*new\s*Date\(\'(\w+)\'\)'
     re_url = '(.*gizmodo\.com\/.*)'
+    re_date = '"datePublished":"([\w\-:]*)"'
 
     # Callback method that parses the GET response for each crawled url
     def parse(self, response):
@@ -31,8 +32,12 @@ class GizmodoSpider(scrapy.Spider):
             item = GizmodoEntryItem()
             item['author'] = response.xpath('//meta[@name="author"]/@content').extract()[0]
             item['title'] = response.xpath('//meta[@property="og:title"]/@content').extract()[0]
+            item['keywords'] = response.xpath('//meta[@name="keywords"]/@content').extract()[0]
+            item['description'] = response.xpath('//meta[@name="description"]/@content').extract()[0]
             # Uses the JavaScript date (milliseconds since the epoch) as post_id
-            item['post_id'] = response.xpath('//script/text()').re(self.re_date)[0]
+            item['post_id'] = response.xpath('//script/text()').re(self.re_id)[0]
+            item['post_date'] = response.xpath('//script/text()').re(self.re_date)[0]
+            item['url'] = response.url
             yield item
 
         # from all urls on the page, follow only absloute ones in the gizmodo domain name
