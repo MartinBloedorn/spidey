@@ -83,7 +83,7 @@ The `--bare` options makes a full copy of the repo, enabling it to be *pushed* t
 
     johndoe@vps $ git clone spidey-bare spidey      # clones a regular repo off of spidey-bare
     
-Everytime `spidey-bare` receives a *push*, it may run various hooks (callbacks, if you will). We're interested in the `post-update` callback. To make **git** run it, execute:
+Everytime `spidey-bare` receives a *push*, it may run various hooks (callbacks, if you will). We're interested in the `post-update` hook. To make **git** run it, execute:
 
     mv spidey-bare/hooks/post-update.sample spidey-bare/hooks/post-update
     chmod a+x spidey-bare/hooks/post-update
@@ -113,7 +113,7 @@ With your editor of choice, edit `spidey-bare/hooks/post-update` to look like:
     # Exit script 
     exit 0
 
-Needles to say, this script is dumb and is as robust as a castle of cards on a plane's wing. It's just a bare-minimum starting point for a simple automatic deployment for **spidey**. Logging and checking are welcome. 
+Needless to say, this script is dumb and is as robust as a castle of cards on a plane's wing. It's just a bare-minimum starting point for a simple automatic deployment for **spidey**. Logging and checking are welcome. 
 
 Lastly, in the repository on its local machine, `johndoe` needs to add the path to `spidey-bare`. Suppose the VPS hosts `example.com`:
 
