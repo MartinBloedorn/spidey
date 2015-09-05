@@ -4,6 +4,9 @@
 # Avoid sending the database back and forth:
 *db.sqlite3
 
+# Igonoring the log saved by the spider
+*gizmodo_crawler_log.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
