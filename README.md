@@ -4,7 +4,23 @@ A web crawler. Ergo the name. See? Spidey? Got it? ... Sorry. I'm leaving.
 # What's the point? 
 A scraping that gathers information from articles on [Gizmodo US](http://us.gizmodo.com), saves them to a DB and serves the info through a REST API. 
 
-**spidey** is now running on [`martinvb.com/spidey`](http://martinvb.com/spidey). Load the page's JSON response into a [viewer](http://codebeautify.org/jsonviewer#), if you wish. 
+**spidey** is now up on [`martinvb.com/spidey`](http://martinvb.com/spidey).
+
+Running a `GET` on [`martinvb.com/spidey`](http://martinvb.com/spidey) yields the following metadata about all scraped posts, serialized in a JSON package:
+
+    id              # DB id
+    created         # When the post was scraped
+    title           # Post title
+    author          # Post's author
+    url             # Post URL
+    post_id         # Post ID 
+    post_date       # Post date
+    keyworkds       # Post keywords
+    description     # Post short description (single paragraph)
+    
+To read the full text on any individual post, `GET` `martinvb.com/spidey/<post_id>`.
+
+Load the page's JSON response into a [viewer](http://codebeautify.org/jsonviewer#), if you wish. 
 
 # Dependencies and setup
 *Spidey* depends on [*django*](https://www.djangoproject.com/), [*django-rest-framework*](http://www.django-rest-framework.org) and [*scrapy*](http://www.scrapy.org). To get them (with [*pip*](https://pypi.python.org/pypi/pip)):
