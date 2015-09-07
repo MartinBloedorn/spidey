@@ -57,7 +57,7 @@ class GizmodoStoringPipeline(object):
             g_item.post_date = item['post_date']
             g_item.url = item['url']
             # Removing html tags in text
-            g_item.text = self.strip_tags(item['text'])
+            g_item.text = ''#self.strip_tags(item['text'])
             g_item.save()
 
             #return item

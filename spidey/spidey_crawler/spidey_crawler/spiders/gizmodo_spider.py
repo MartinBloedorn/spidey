@@ -47,7 +47,7 @@ class GizmodoSpider(scrapy.Spider):
             item['post_id'] = safe_tl_get(response.xpath('//script/text()').re(self.re_id), 0)
             item['post_date'] = safe_tl_get(response.xpath('//script/text()').re(self.re_date), 0)
             # Join all elements of the query in a single block of text, breaking lines at each paragraph
-            item['text'] = '\n'.join(response.xpath('//p[@data-textannotation-id]').extract())
+            item['text'] = ''#'\n'.join(response.xpath('//p[@data-textannotation-id]').extract())
             item['url'] = response.url
             yield item
 
