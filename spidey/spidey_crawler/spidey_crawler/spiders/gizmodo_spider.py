@@ -9,7 +9,7 @@ class GizmodoSpider(scrapy.Spider):
     start_urls = ['http://us.gizmodo.com/']
 
     # Maximum number of urls
-    max_expansions = 1000
+    max_expansions = 100
 
     # Regex for date field and valid URL (to crawl)
     re_id = 'date:\s*new\s*Date\(\'(\w+)\'\)'
