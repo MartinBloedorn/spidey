@@ -3,6 +3,14 @@ from scrapy.exceptions import CloseSpider
 from spidey_crawler.items import GizmodoEntryItem
 
 
+# The queries in GizmodoSpider are designed to return a vector with a single element
+# but that may go wrong in some pages. If that's the case, this wrapper returns an empty string
+def safe_tl_get(l, i):
+    try:
+        return l[i]
+    except IndexError:
+        return ''
+
 class GizmodoSpider(scrapy.Spider):
     name = "gizmodo"
     allowed_domains = ["gizmodo.com"]
@@ -15,6 +23,7 @@ class GizmodoSpider(scrapy.Spider):
     re_id = 'date:\s*new\s*Date\(\'(\w+)\'\)'
     re_url = '(.*gizmodo\.com\/.*)'
     re_date = '"datePublished":"([\w\-:]*)"'
+
 
     # Callback method that parses the GET response for each crawled url
     def parse(self, response):
@@ -30,13 +39,13 @@ class GizmodoSpider(scrapy.Spider):
 
             # Filters the response to correctly fill the item, then yields it to the pipeline
             item = GizmodoEntryItem()
-            item['author'] = response.xpath('//meta[@name="author"]/@content').extract()[0]
-            item['title'] = response.xpath('//meta[@property="og:title"]/@content').extract()[0]
-            item['keywords'] = response.xpath('//meta[@name="keywords"]/@content').extract()[0]
-            item['description'] = response.xpath('//meta[@name="description"]/@content').extract()[0]
+            item['author'] = safe_tl_get(response.xpath('//meta[@name="author"]/@content').extract(), 0)
+            item['title'] = safe_tl_get(response.xpath('//meta[@property="og:title"]/@content').extract(), 0)
+            item['keywords'] = safe_tl_get(response.xpath('//meta[@name="keywords"]/@content').extract(), 0)
+            item['description'] = safe_tl_get(response.xpath('//meta[@name="description"]/@content').extract(), 0)
             # Uses the JavaScript date (milliseconds since the epoch) as post_id
-            item['post_id'] = response.xpath('//script/text()').re(self.re_id)[0]
-            item['post_date'] = response.xpath('//script/text()').re(self.re_date)[0]
+            item['post_id'] = safe_tl_get(response.xpath('//script/text()').re(self.re_id), 0)
+            item['post_date'] = safe_tl_get(response.xpath('//script/text()').re(self.re_date), 0)
             # Join all elements of the query in a single block of text, breaking lines at each paragraph
             item['text'] = '\n'.join(response.xpath('//p[@data-textannotation-id]').extract())
             item['url'] = response.url

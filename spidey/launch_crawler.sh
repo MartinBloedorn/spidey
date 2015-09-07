@@ -9,5 +9,5 @@ SCRAPY_LOG=/home/martin/apps/gizmodo_crawler_log.txt
 SCWD="$(pwd)"
 
 cd $SPIDEY_DIR/spidey/spidey_crawler
-${SCRAPY_BIN} crawl gizmodo -s LOG_FILE=$SCRAPY_LOG
+${SCRAPY_BIN} crawl gizmodo -s LOG_LEVEL='INFO' -s LOG_FILE=$SCRAPY_LOG
 cd $SCWD

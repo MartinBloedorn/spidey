@@ -17,3 +17,7 @@ class GizmodoEntryItem(scrapy.Item):
     keywords = scrapy.Field()
     text = scrapy.Field()
     url = scrapy.Field()
+
+    def __repr__(self):
+        """only print out title after exiting the Pipeline"""
+        return repr({"Title": self['title']})

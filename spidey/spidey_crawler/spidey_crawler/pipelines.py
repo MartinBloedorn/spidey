@@ -60,4 +60,4 @@ class GizmodoStoringPipeline(object):
             g_item.text = self.strip_tags(item['text'])
             g_item.save()
 
-            return item
+            #return item
