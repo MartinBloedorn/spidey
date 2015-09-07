@@ -10,12 +10,14 @@ $ Ignore the PyCharm project folder
 # Igonoring the log saved by the spider
 *gizmodo_crawler_log.txt
 
-# Adding .pyc files required by (and generated before runtime) Scrapy
-!spidey/spidey_crawler/spidey_crawler/*.pyc
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+
+# Adding .pyc files required by (and generated before runtime) Scrapy
+!spidey/spidey_crawler/spidey_crawler/items.pyc
+!spidey/spidey_crawler/spidey_crawler/pipelines.pyc
+!spidey/spidey_crawler/spidey_crawler/settings.pyc
 
 # C extensions
 *.so
