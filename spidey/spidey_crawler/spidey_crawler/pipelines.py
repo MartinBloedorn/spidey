@@ -18,6 +18,7 @@ from scrapy.exceptions import DropItem
 from spidey_rest.models import GizmodoEntry
 
 
+# Removes HTML special characters and tags in text
 class MLStripper(HTMLParser):
     def __init__(self):
         self.reset()
@@ -27,7 +28,7 @@ class MLStripper(HTMLParser):
         self.fed.append(d)
 
     def get_data(self):
-        return ''.join(self.fed)
+        return self.unescape(''.join(self.fed))
 
 
 class GizmodoStoringPipeline(object):
@@ -57,7 +58,7 @@ class GizmodoStoringPipeline(object):
             g_item.post_date = item['post_date']
             g_item.url = item['url']
             # Removing html tags in text
-            g_item.text = ''#self.strip_tags(item['text'])
+            g_item.text = self.strip_tags(item['text'])
             g_item.save()
 
             #return item
