@@ -5,9 +5,8 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from spidey_rest.models import GizmodoEntry
 from spidey_rest.serializers import GizmodoEntrySerializer
-import json
-from spidey_rest.serializers import GizmodoEntryMetaSerializer
-from django import db
+from collections import OrderedDict
+
 
 class JSONResponse(HttpResponse):
     """
@@ -25,10 +24,13 @@ def spidey_main(request):
     List meta (title, author, keywords, description) for all posts, starting with more recent one
     """
     if request.method == 'GET':
-        ge = GizmodoEntry.objects.values('title', 'author', 'url', 'post_id', 'post_date',
-                                                                   'keywords', 'description')
-        return JSONResponse(ge)
-
+        data = []
+        l = 'title', 'author', 'url', 'post_id', 'post_date', 'keywords', 'description'
+        ge = GizmodoEntry.objects.values(*l).order_by('-post_id')
+        # This is awful; reordering the output of '.values' (with random ordering) according to l
+        for g in ge:
+            data.append(OrderedDict((k, g[k]) for k in l))
+        return JSONResponse(data)
 
 
 def spidey_full_post(request, post_id):
