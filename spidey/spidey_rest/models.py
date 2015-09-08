@@ -1,6 +1,5 @@
 from django.db import models
 from django.db import IntegrityError
-from django.shortcuts import render_to_response
 
 
 class GizmodoEntry(models.Model):
@@ -14,7 +13,6 @@ class GizmodoEntry(models.Model):
     post_id = models.CharField(max_length=50, unique=True)
     post_date = models.CharField(max_length=50, default='')
     url = models.CharField(max_length=500, default='')
-
 
     class Meta:
         ordering = ('created',)
