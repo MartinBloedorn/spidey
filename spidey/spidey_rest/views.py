@@ -1,10 +1,12 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.db import transaction
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from spidey_rest.models import GizmodoEntry
 from spidey_rest.serializers import GizmodoEntrySerializer
 from spidey_rest.serializers import GizmodoEntryMetaSerializer
+from django.db import transaction
 
 
 class JSONResponse(HttpResponse):
@@ -26,7 +28,8 @@ def spidey_main(request):
         # Sort by descending post_id value
         g_entries = GizmodoEntry.objects.order_by('-post_id')
         g_serializer = GizmodoEntryMetaSerializer(g_entries, many=True)
-        return JSONResponse(g_serializer.data)
+        transaction.commit()
+        return HttpResponse(g_serializer.data)
 
 
 def spidey_full_post(request, post_id):
