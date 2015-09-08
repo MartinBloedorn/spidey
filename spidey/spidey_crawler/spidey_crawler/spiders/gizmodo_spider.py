@@ -11,19 +11,19 @@ def safe_tl_get(l, i):
     except IndexError:
         return ''
 
+
 class GizmodoSpider(scrapy.Spider):
     name = "gizmodo"
     allowed_domains = ["gizmodo.com"]
     start_urls = ['http://us.gizmodo.com/']
 
     # Maximum number of urls
-    max_expansions = 50
+    max_expansions = 100
 
     # Regex for date field and valid URL (to crawl)
     re_id = 'date:\s*new\s*Date\(\'(\w+)\'\)'
     re_url = '(.*gizmodo\.com\/.*)'
     re_date = '"datePublished":"([\w\-:]*)"'
-
 
     # Callback method that parses the GET response for each crawled url
     def parse(self, response):
@@ -33,9 +33,10 @@ class GizmodoSpider(scrapy.Spider):
         if self.max_expansions <= 0:
             raise CloseSpider('Reached maximum of URL crawls!')
 
-        # Verify if page is of type 'article'
-        type = response.xpath('//meta[@property="og:type"]/@content').extract()
-        if type.__len__() > 0 and type[0] == 'article':
+        # Verify if page is of type 'article' and if field 'post_id' can be found
+        type = safe_tl_get(response.xpath('//meta[@property="og:type"]/@content').extract(), 0)
+        post_id = safe_tl_get(response.xpath('//script/text()').re(self.re_id), 0)
+        if type == 'article' and post_id != '':
 
             # Filters the response to correctly fill the item, then yields it to the pipeline
             item = GizmodoEntryItem()
@@ -44,7 +45,7 @@ class GizmodoSpider(scrapy.Spider):
             item['keywords'] = safe_tl_get(response.xpath('//meta[@name="keywords"]/@content').extract(), 0)
             item['description'] = safe_tl_get(response.xpath('//meta[@name="description"]/@content').extract(), 0)
             # Uses the JavaScript date (milliseconds since the epoch) as post_id
-            item['post_id'] = safe_tl_get(response.xpath('//script/text()').re(self.re_id), 0)
+            item['post_id'] = post_id
             item['post_date'] = safe_tl_get(response.xpath('//script/text()').re(self.re_date), 0)
             # Join all elements of the query in a single block of text, breaking lines at each paragraph
             item['text'] = '\n'.join(response.xpath('//p[@data-textannotation-id]').extract())

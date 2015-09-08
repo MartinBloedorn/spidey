@@ -7,6 +7,7 @@
 from spidey_crawler.items import GizmodoEntryItem
 
 import sys, os
+import lxml.html
 
 # Configures Django models to be acessible from outside the app folder
 # http://blog.gabrielsaldana.org/using-django-models-in-external-python-scripts/ **such swag**
@@ -18,24 +19,10 @@ from scrapy.exceptions import DropItem
 from spidey_rest.models import GizmodoEntry
 
 
-# Removes HTML special characters and tags in text
-class MLStripper(HTMLParser):
-    def __init__(self):
-        self.reset()
-        self.fed = []
-
-    def handle_data(self, d):
-        self.fed.append(d)
-
-    def get_data(self):
-        return self.unescape(''.join(self.fed))
-
-
 class GizmodoStoringPipeline(object):
 
     def __init__(self):
         self.post_ids_seen = set()
-        self.stripper = MLStripper()
 
     def strip_tags(self, html):
         self.stripper.feed(html)
@@ -58,7 +45,7 @@ class GizmodoStoringPipeline(object):
             g_item.post_date = item['post_date']
             g_item.url = item['url']
             # Removing html tags in text
-            g_item.text = self.strip_tags(item['text'])
+            g_item.text = lxml.html.fromstring(item['text']).text_content()
             g_item.save()
 
             #return item
