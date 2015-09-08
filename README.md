@@ -8,8 +8,6 @@ A scraping that gathers information from articles on [Gizmodo US](http://us.gizm
 
 Running a `GET` on [`martinvb.com/spidey`](http://martinvb.com/spidey) yields the following metadata about all scraped posts, serialized in a JSON package:
 
-    id              # DB id
-    created         # When the post was scraped
     title           # Post title
     author          # Post's author
     url             # Post URL
@@ -114,8 +112,9 @@ With your editor of choice, edit `spidey-bare/hooks/post-update` to look like:
     fuser -k 8000/tcp 
     # Go to the local spidey repo (not spidey-bare)
     cd /home/johndoe/spidey 
-    # Get the changes pushed to the bare repo
-    git pull origin 
+    # Get the changes pushed to the bare repo, overwrite local changes 
+    git fetch origin
+    git reset --hard origin/master 
     # Setup and run the server
     cd spidey
     python manage.py makemigrations 
