@@ -112,8 +112,9 @@ With your editor of choice, edit `spidey-bare/hooks/post-update` to look like:
     fuser -k 8000/tcp 
     # Go to the local spidey repo (not spidey-bare)
     cd /home/johndoe/spidey 
-    # Get the changes pushed to the bare repo
-    git pull origin 
+    # Get the changes pushed to the bare repo, overwrite local changes 
+    git fetch origin
+    git reset --hard origin/master 
     # Setup and run the server
     cd spidey
     python manage.py makemigrations 
