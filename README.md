@@ -8,8 +8,6 @@ A scraping that gathers information from articles on [Gizmodo US](http://us.gizm
 
 Running a `GET` on [`martinvb.com/spidey`](http://martinvb.com/spidey) yields the following metadata about all scraped posts, serialized in a JSON package:
 
-    id              # DB id
-    created         # When the post was scraped
     title           # Post title
     author          # Post's author
     url             # Post URL
