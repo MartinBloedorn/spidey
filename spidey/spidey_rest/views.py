@@ -23,6 +23,7 @@ def spidey_main(request):
     List meta (title, author, keywords, description) for all posts, starting with more recent one
     """
     if request.method == 'GET':
+        # Sort by descending post_id value
         g_entries = GizmodoEntry.objects.order_by('-post_id')
         g_serializer = GizmodoEntryMetaSerializer(g_entries, many=True)
         return JSONResponse(g_serializer.data)
@@ -33,7 +34,7 @@ def spidey_full_post(request, post_id):
     Show full info (title, author, keywords, description, full text) for a single post
     """
     try:
-        g_entry = g_entries = GizmodoEntry.objects.get(post_id=post_id)
+        g_entry = GizmodoEntry.objects.get(post_id=post_id)
     except GizmodoEntry.DoesNotExist:
         return HttpResponse(status=404)
 
